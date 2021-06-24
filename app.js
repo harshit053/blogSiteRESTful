@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
 
-var url = process.env.DATABASEURL || "mongodb://localhost/RestfulBlogApp";
+var url = process.env.DATABASEURL||"mongodb://localhost/RestfulBlogApp";
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
