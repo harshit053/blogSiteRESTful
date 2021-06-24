@@ -11,7 +11,9 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
-mongoose.connect("mongodb://localhost/RestfulBlogApp", { useNewUrlParser: true, useUnifiedTopology: true });
+
+var url = process.env.DATABASEURL || "mongodb://localhost/RestfulBlogApp";
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 //MONGOOSE/MODEL CONFIG
